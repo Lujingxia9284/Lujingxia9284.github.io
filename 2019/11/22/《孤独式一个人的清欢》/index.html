@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="jxLu | Lifelong Learner">
 <meta property="og:description" content="人心必须珍藏某种信念，必须握住某种梦想和希望，必须有彩虹，必须有歌可唱，必须有高贵的事务可以投身。 ——林清玄">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-22T08:59:10.608Z">
+<meta property="og:updated_time" content="2019-11-23T09:15:21.342Z">
 <meta name="twitter:card" content="summary">
   
   
@@ -24,6 +24,9 @@
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   
+  
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
   
@@ -34,6 +37,7 @@
       <div id="container" class="container">
         <article id="post-《孤独式一个人的清欢》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <header id="header" class="header">
+    
   <nav class="mobile-nav">
     <h1 class="nickname">Lu Jingxia</h1>
     <ul class="mobile-nav-menu">
@@ -73,7 +77,9 @@
 	  <a class="main-nav-link" href="/about">About</a>
 	
   </nav>
+  
 </header>
+
 
   <hr/>
   <div class="article-inner">
@@ -92,7 +98,28 @@
     
     <div class="e-content article-entry typo" itemprop="articleBody">
       
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=29593497&auto=1&height=32"></iframe>
+        <!-- 
+
+        <div id="aplayer-SgxsWlmf" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-SgxsWlmf"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "少女的祈祷",
+              author: "杨千嬅",
+              url: "http://music.163.com/song/media/outer/url?id=29593497.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script> -->
 
 <p><strong>人心必须珍藏某种信念，<br>必须握住某种梦想和希望，<br>必须有彩虹，必须有歌可唱，<br>必须有高贵的事务可以投身。</strong></p>
 <p align = "right">——林清玄</p>
@@ -181,7 +208,10 @@
 <script src="/js/typing.js"></script>
 <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
 
-
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+    <div id="aplayer"></div>
+    <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+    <script type="text/javascript" src="/dist/music.js"></script>
 
 
 
