@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-16 14:53:13 / Modified: 14:57:07" itemprop="dateCreated datePublished" datetime="2020-02-16T14:53:13+08:00">2020-02-16</time>
+              <time title="Created: 2020-02-16 14:53:13 / Modified: 15:23:57" itemprop="dateCreated datePublished" datetime="2020-02-16T14:53:13+08:00">2020-02-16</time>
             </span>
 
           
@@ -234,80 +234,8 @@
       
           <p><code>nohup</code>是之前在写一个基于python的服务器部署时用到的，服务器一部分是基础的网站后台开发，使用<code>Django</code>作为框架接收前端请求，用的<code>Ubuntu+Nginx+Django</code>的部署方案，另一部分和嵌入式通过<code>socket</code>进行数据传输，数据库读写 <del>（现在想来是一个生产-消费者模式</del>，这部分功能的实现我写成了几个python脚本，燃鹅服务器并不像平常在PC上使用的Linux，没有图形界面更不能开好几个终端。为了让它在后台持续不断地运行并且不占用当前终端，在网上查找了很多信息，最终用<code>nohup</code>命令解决了这个问题。</p>
 <hr>
-<p><code>nohup</code>即<code>no hang up</code>,不挂断地运行<br>使用<code>nohup Command [ Arg … ]</code>如  <code>python test.py</code>并无在后台运行地功能，在命令后面加上<code>&amp;</code>即可<br><img src="/.com//nohup1.png" alt="这是一张图片"><br>输出默认重定向到<code>nohup.out</code><br>由于我程序里面写的是绑定一个端口并监听，可以用<code>lsof -i:端口号</code>查看端口占用情况<br>其余常用的命令：<br><code>jobs -l</code>:查看当前终端生效的进程<br><code>kill -9 进程号</code>:杀死进程<br><code>ps -ef</code>:显示所有进程信息</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/nohup%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="jxLu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jxLu | Lifelong Learner">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/16/nohup%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Linux下nohup命令使用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-02-16 00:00:00 / Modified: 14:46:40" itemprop="dateCreated datePublished" datetime="2020-02-16T00:00:00+08:00">2020-02-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">技术笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-
-      
-          <p><code>nohup</code>是之前在写一个基于python的服务器部署时用到的，服务器一部分是基础的网站后台开发，使用<code>Django</code>作为框架接收前端请求，用的<code>Ubuntu+Nginx+Django</code>的部署方案，另一部分和嵌入式通过<code>socket</code>进行数据传输，数据库读写 <del>（现在想来是一个生产-消费者模式</del>，这部分功能的实现我写成了几个python脚本，燃鹅服务器并不像平常在PC上使用的Linux，没有图形界面更不能开好几个终端。为了让它在后台持续不断地运行并且不占用当前终端，在网上查找了很多信息，最终用<code>nohup</code>命令解决了这个问题。</p>
-<hr>
-<p><code>nohup</code>即<code>no hang up</code>,不挂断地运行<br>使用<code>nohup Command [ Arg … ]</code>如  <code>python test.py</code>并无在后台运行地功能，在命令后面加上<code>&amp;</code>即可<br><a href d:\hexo_blog\hexo\picture\nohup1.png"">这是一张图片</a><br>&lt;img src=”D:\hexo_blog\Hexo\picture\nohup1.png”,alt=”R”,width=600 height=300&gt;<br>输出默认重定向到<code>nohup.out</code><br>由于我程序里面写的是绑定一个端口并监听，可以用<code>lsof -i:端口号</code>查看端口占用情况<br>其余常用的命令：<br><code>jobs -l</code>:查看当前终端生效的进程<br><code>kill -9 进程号</code>:杀死进程<br><code>ps -ef</code>:显示所有进程信息</p>
+<p><code>nohup</code>即<code>no hang up</code>,不挂断地运行<br>使用<code>nohup Command [ Arg … ]</code>如  <code>python test.py</code>并无在后台运行地功能，在命令后面加上<code>&amp;</code>即可<br><img src="Linux%E4%B8%8Bnohup%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/nohup1.png" alt="这是一张图片"></p>
+<p>输出默认重定向到<code>nohup.out</code><br>由于我程序里面写的是绑定一个端口并监听，可以用<code>lsof -i:端口号</code>查看端口占用情况<br>其余常用的命令：<br><code>jobs -l</code>:查看当前终端生效的进程<br><code>kill -9 进程号</code>:杀死进程<br><code>ps -ef</code>:显示所有进程信息</p>
 
       
     </div>
@@ -734,13 +662,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
