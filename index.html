@@ -234,7 +234,7 @@
       
           <p><code>nohup</code>是之前在写一个基于python的服务器部署时用到的，服务器一部分是基础的网站后台开发，使用<code>Django</code>作为框架接收前端请求，用的<code>Ubuntu+Nginx+Django</code>的部署方案，另一部分和嵌入式通过<code>socket</code>进行数据传输，数据库读写 <del>（现在想来是一个生产-消费者模式</del>，这部分功能的实现我写成了几个python脚本，燃鹅服务器并不像平常在PC上使用的Linux，没有图形界面更不能开好几个终端。为了让它在后台持续不断地运行并且不占用当前终端，在网上查找了很多信息，最终用<code>nohup</code>命令解决了这个问题。</p>
 <hr>
-<p><code>nohup</code>即<code>no hang up</code>,不挂断地运行<br>使用<code>nohup Command [ Arg … ]</code>如  <code>python test.py</code>并无在后台运行地功能，在命令后面加上<code>&amp;</code>即可<br><img src="Linux%E4%B8%8Bnohup%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/nohup1.png" alt="这是一张图片"></p>
+<p><code>nohup</code>即<code>no hang up</code>,不挂断地运行<br>使用<code>nohup Command [ Arg … ]</code>如  <code>python test.py</code>并无在后台运行地功能，在命令后面加上<code>&amp;</code>即可<br><img src="/.com//nohup1.png" alt="这是一张图片"></p>
 <p>输出默认重定向到<code>nohup.out</code><br>由于我程序里面写的是绑定一个端口并监听，可以用<code>lsof -i:端口号</code>查看端口占用情况<br>其余常用的命令：<br><code>jobs -l</code>:查看当前终端生效的进程<br><code>kill -9 进程号</code>:杀死进程<br><code>ps -ef</code>:显示所有进程信息</p>
 
       
@@ -314,12 +314,12 @@
       
           <!-- 
 
-        <div id="aplayer-mupEjMjT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-cWcIkMFU" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-mupEjMjT"),
+            element: document.getElementById("aplayer-cWcIkMFU"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -708,7 +708,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
