@@ -48,14 +48,14 @@
   };
 </script>
 
-  <meta name="description" content="深度学习500问chapter 2 半监督学习： 部分数据被标记，应用在分类和回归，通过对已标记数据建模，对未标记数据进行预测 弱监督学习： 数据集标签是不可靠的（不正确，多标记，标记不充分，局部标记）。已知弱标签，训练算法讲数据映射到一组更强的标签（如分类到分割）。 分类算法：贝叶斯、决策树、SVM、KNN、逻辑回归、神经网络、Adaboosting 评价指标：召回率（=灵敏度），度量有多少哥正">
+  <meta name="description" content="机器学习&#x2F;深度学习基础 diffusion transformer CLIP  深度学习500问chapter 2 半监督学习： 部分数据被标记，应用在分类和回归，通过对已标记数据建模，对未标记数据进行预测 弱监督学习： 数据集标签是不可靠的（不正确，多标记，标记不充分，局部标记）。已知弱标签，训练算法讲数据映射到一组更强的标签（如分类到分割）。 分类算法：贝叶斯、决策树、SVM、KNN、逻辑回">
 <meta property="og:type" content="article">
 <meta property="og:title" content="八股记录">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;02&#x2F;15&#x2F;%E5%85%AB%E8%82%A1%E8%AE%B0%E5%BD%95&#x2F;index.html">
 <meta property="og:site_name" content="Jingxia Lu">
-<meta property="og:description" content="深度学习500问chapter 2 半监督学习： 部分数据被标记，应用在分类和回归，通过对已标记数据建模，对未标记数据进行预测 弱监督学习： 数据集标签是不可靠的（不正确，多标记，标记不充分，局部标记）。已知弱标签，训练算法讲数据映射到一组更强的标签（如分类到分割）。 分类算法：贝叶斯、决策树、SVM、KNN、逻辑回归、神经网络、Adaboosting 评价指标：召回率（=灵敏度），度量有多少哥正">
+<meta property="og:description" content="机器学习&#x2F;深度学习基础 diffusion transformer CLIP  深度学习500问chapter 2 半监督学习： 部分数据被标记，应用在分类和回归，通过对已标记数据建模，对未标记数据进行预测 弱监督学习： 数据集标签是不可靠的（不正确，多标记，标记不充分，局部标记）。已知弱标签，训练算法讲数据映射到一组更强的标签（如分类到分割）。 分类算法：贝叶斯、决策树、SVM、KNN、逻辑回">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-02-16T02:52:23.845Z">
+<meta property="og:updated_time" content="2023-02-16T05:33:25.765Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2023/02/15/%E5%85%AB%E8%82%A1%E8%AE%B0%E5%BD%95/">
@@ -225,7 +225,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-16 10:52:23" itemprop="dateModified" datetime="2023-02-16T10:52:23+08:00">2023-02-16</time>
+                <time title="Modified: 2023-02-16 13:33:25" itemprop="dateModified" datetime="2023-02-16T13:33:25+08:00">2023-02-16</time>
               </span>
 
           
@@ -240,11 +240,22 @@
     
 
       
-        <h2 id="深度学习500问"><a href="#深度学习500问" class="headerlink" title="深度学习500问"></a>深度学习500问</h2><h3 id="chapter-2"><a href="#chapter-2" class="headerlink" title="chapter 2"></a>chapter 2</h3><ul>
+        <ul>
+<li>机器学习/深度学习基础</li>
+<li>diffusion</li>
+<li>transformer</li>
+<li>CLIP</li>
+</ul>
+<h2 id="深度学习500问"><a href="#深度学习500问" class="headerlink" title="深度学习500问"></a>深度学习500问</h2><h3 id="chapter-2"><a href="#chapter-2" class="headerlink" title="chapter 2"></a>chapter 2</h3><ul>
 <li>半监督学习： 部分数据被标记，应用在分类和回归，通过对已标记数据建模，对未标记数据进行预测</li>
 <li>弱监督学习： 数据集标签是不可靠的（不正确，多标记，标记不充分，局部标记）。已知弱标签，训练算法讲数据映射到一组更强的标签（如分类到分割）。</li>
 <li>分类算法：贝叶斯、决策树、SVM、KNN、逻辑回归、神经网络、Adaboosting</li>
-<li>评价指标：召回率（=灵敏度），度量有多少哥正例被分为正例</li>
+<li>评价指标：召回率（=灵敏度），度量有多少个正例被分为正例</li>
+</ul>
+<h2 id="牛客深度学习面试题"><a href="#牛客深度学习面试题" class="headerlink" title="牛客深度学习面试题"></a>牛客深度学习面试题</h2><h3 id="Batch-normalization"><a href="#Batch-normalization" class="headerlink" title="Batch normalization"></a>Batch normalization</h3><ul>
+<li>机器学习假设训练数据和测试数据满足相同的分布，BN就是在深度神经网络训练过程中使每一层神经网络的输入保持相同的分布。</li>
+<li>covariate shift：如果实例合集（x,y）中输入值x的分布老是变，不符合独立同分布的假设，模型很难稳定的学规律。</li>
+<li>BN通过规范化手段，将每层神经网络任意神经元的输入值的分布强行拉回到（0，1）正态分布，使得激活输入值落在非线性函数对输入比较敏感的区域，那么输入的小变化就会导致损失函数较大的变化，使得梯度变大，避免梯度消失的问题，加快收敛。（输入-&gt; 神经元 -&gt; BN -&gt; 激活函数）</li>
 </ul>
 
     </div>
@@ -338,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习500问"><span class="nav-number">1.</span> <span class="nav-text">深度学习500问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter-2"><span class="nav-number">1.1.</span> <span class="nav-text">chapter 2</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习500问"><span class="nav-number">1.</span> <span class="nav-text">深度学习500问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter-2"><span class="nav-number">1.1.</span> <span class="nav-text">chapter 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#牛客深度学习面试题"><span class="nav-number">2.</span> <span class="nav-text">牛客深度学习面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Batch-normalization"><span class="nav-number">2.1.</span> <span class="nav-text">Batch normalization</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

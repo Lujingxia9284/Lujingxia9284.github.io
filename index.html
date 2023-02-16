@@ -381,7 +381,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-16 10:52:23" itemprop="dateModified" datetime="2023-02-16T10:52:23+08:00">2023-02-16</time>
+                <time title="Modified: 2023-02-16 13:33:25" itemprop="dateModified" datetime="2023-02-16T13:33:25+08:00">2023-02-16</time>
               </span>
 
           
@@ -396,11 +396,22 @@
     
 
       
-          <h2 id="深度学习500问"><a href="#深度学习500问" class="headerlink" title="深度学习500问"></a>深度学习500问</h2><h3 id="chapter-2"><a href="#chapter-2" class="headerlink" title="chapter 2"></a>chapter 2</h3><ul>
+          <ul>
+<li>机器学习/深度学习基础</li>
+<li>diffusion</li>
+<li>transformer</li>
+<li>CLIP</li>
+</ul>
+<h2 id="深度学习500问"><a href="#深度学习500问" class="headerlink" title="深度学习500问"></a>深度学习500问</h2><h3 id="chapter-2"><a href="#chapter-2" class="headerlink" title="chapter 2"></a>chapter 2</h3><ul>
 <li>半监督学习： 部分数据被标记，应用在分类和回归，通过对已标记数据建模，对未标记数据进行预测</li>
 <li>弱监督学习： 数据集标签是不可靠的（不正确，多标记，标记不充分，局部标记）。已知弱标签，训练算法讲数据映射到一组更强的标签（如分类到分割）。</li>
 <li>分类算法：贝叶斯、决策树、SVM、KNN、逻辑回归、神经网络、Adaboosting</li>
-<li>评价指标：召回率（=灵敏度），度量有多少哥正例被分为正例</li>
+<li>评价指标：召回率（=灵敏度），度量有多少个正例被分为正例</li>
+</ul>
+<h2 id="牛客深度学习面试题"><a href="#牛客深度学习面试题" class="headerlink" title="牛客深度学习面试题"></a>牛客深度学习面试题</h2><h3 id="Batch-normalization"><a href="#Batch-normalization" class="headerlink" title="Batch normalization"></a>Batch normalization</h3><ul>
+<li>机器学习假设训练数据和测试数据满足相同的分布，BN就是在深度神经网络训练过程中使每一层神经网络的输入保持相同的分布。</li>
+<li>covariate shift：如果实例合集（x,y）中输入值x的分布老是变，不符合独立同分布的假设，模型很难稳定的学规律。</li>
+<li>BN通过规范化手段，将每层神经网络任意神经元的输入值的分布强行拉回到（0，1）正态分布，使得激活输入值落在非线性函数对输入比较敏感的区域，那么输入的小变化就会导致损失函数较大的变化，使得梯度变大，避免梯度消失的问题，加快收敛。（输入-&gt; 神经元 -&gt; BN -&gt; 激活函数）</li>
 </ul>
 
       
