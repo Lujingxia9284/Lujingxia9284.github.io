@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-25 10:27:44" itemprop="dateModified" datetime="2023-02-25T10:27:44+08:00">2023-02-25</time>
+                <time title="Modified: 2023-02-26 15:43:41" itemprop="dateModified" datetime="2023-02-26T15:43:41+08:00">2023-02-26</time>
               </span>
 
           
@@ -242,6 +242,12 @@
 <li>问题如果和子树有关系，那大概率要给函数设置合理的定义和返回值，在后序位置写代码</li>
 <li>是否可以通过遍历一遍二叉树得到答案？如果可以，用一个 traverse 函数配合外部变量来实现，这叫「遍历」的思维模式。<br>是否可以定义一个递归函数，通过子问题（子树）的答案推导出原问题的答案？如果可以，写出这个递归函数的定义，并充分利用这个函数的返回值，这叫「分解问题」的思维模式。</li>
 <li>二叉树的构造问题一般都是使用「分解问题」的思路：构造整棵树 = 根节点 + 构造左子树 + 构造右子树</li>
+<li>递归三部曲：<ol>
+<li>确定递归函数的参数和返回值</li>
+<li>确定终止条件</li>
+<li></li>
+</ol>
+</li>
 </ul>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="思路篇"><a href="#思路篇" class="headerlink" title="思路篇"></a>思路篇</h3><ul>
 <li>二叉树最大深度<br>思路：递归。左子树和右子树的最大深度+1（root)<br>基本判断条件<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDepth</span><span class="params">(self, root: Optional[TreeNode])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        leftdepth = self.maxDepth(root.left)</span><br><span class="line">        rightdepth =  self.maxDepth(root.right)</span><br><span class="line">        res = max(leftdepth, rightdepth)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></li>
@@ -255,10 +261,17 @@
 </li>
 <li><ol start="114">
 <li>二叉树展开为列表<br>思路：把每个节点的左子树转为空，左子树放在右子树，右子树接在后方。注意变量的保存。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flatten</span><span class="params">(self, root: Optional[TreeNode])</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Do not return anything, modify root in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.flatten(root.left)</span><br><span class="line">        self.flatten(root.right)</span><br><span class="line"></span><br><span class="line">        left = root.left</span><br><span class="line">        right = root.right</span><br><span class="line"></span><br><span class="line">        root.left = <span class="literal">None</span></span><br><span class="line">        root.right = left</span><br><span class="line">        </span><br><span class="line">        p = root</span><br><span class="line">        <span class="keyword">while</span> p.right:</span><br><span class="line">            p = p.right</span><br><span class="line">        p.right = right</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-<h3 id="构造篇"><a href="#构造篇" class="headerlink" title="构造篇"></a>构造篇</h3></li>
+<h3 id="构造篇"><a href="#构造篇" class="headerlink" title="构造篇"></a>构造篇</h3><code>654. 最大二叉树</code><br>思路：先构建根节点，再递归构造左右子树，注意递归函数传参的左右边界</li>
 </ol>
 </li>
 </ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">constructMaximumBinaryTree</span><span class="params">(self, nums: List[int])</span> -&gt; Optional[TreeNode]:</span></span><br><span class="line">        <span class="keyword">return</span> self.traverse(nums, <span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span><span class="params">(self, nums, left, right)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> left &gt; right:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 找到nums[left:right]最大的元素的序号</span></span><br><span class="line">        index = left</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(left + <span class="number">1</span>, right + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt; nums[index]:</span><br><span class="line">                index = i</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 构造当前节点</span></span><br><span class="line">        root = TreeNode(nums[index])</span><br><span class="line">        <span class="comment"># 构造左侧剩余节点</span></span><br><span class="line">        left = self.traverse(nums, left, index - <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 构造右侧剩余节点</span></span><br><span class="line">        right = self.traverse(nums, index + <span class="number">1</span>, right)</span><br><span class="line"></span><br><span class="line">        root.left = left</span><br><span class="line">        root.right = right</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+<p><code>前中后序构造二叉树</code></p>
+<p><code>297. 二叉树的序列化和反序列化</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">NULL = <span class="number">100000</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Codec</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serialize</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""Encodes a tree to a single string.</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ans = []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">traverse</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                ans.append(NULL)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            ans.append(node.val)</span><br><span class="line">            traverse(node.left)</span><br><span class="line">            traverse(node.right)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        traverse(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">','</span>.join(str(elem) <span class="keyword">for</span> elem <span class="keyword">in</span> ans)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deserialize</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="string">"""Decodes your encoded data to tree.</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        :type data: str</span></span><br><span class="line"><span class="string">        :rtype: TreeNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> data == <span class="string">''</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        serial = deque(int(elem) <span class="keyword">for</span> elem <span class="keyword">in</span> data.split(<span class="string">','</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 递归</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">traverse</span><span class="params">(data)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            val = data.popleft()</span><br><span class="line">            <span class="keyword">if</span> val == NULL:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            root = TreeNode(val)</span><br><span class="line">            root.left=traverse(data)</span><br><span class="line">            root.right=traverse(data)</span><br><span class="line">            <span class="keyword">return</span> root</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> traverse(serial)</span><br></pre></td></tr></table></figure>
+<ol start="101">
+<li>对称二叉树</li>
+</ol>
 
       
     </div>
@@ -309,7 +322,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-17 10:04:51" itemprop="dateModified" datetime="2023-02-17T10:04:51+08:00">2023-02-17</time>
+                <time title="Modified: 2023-02-26 11:50:15" itemprop="dateModified" datetime="2023-02-26T11:50:15+08:00">2023-02-26</time>
               </span>
 
           
@@ -355,6 +368,7 @@
 <li>七月在线</li>
 <li><a href="https://zhuanlan.zhihu.com/p/399813916" target="_blank" rel="noopener">知乎</a></li>
 <li><a href="https://www.nowcoder.com/ta/review-ml?query=&asc=true&order=&tagQuery=&page=1" target="_blank" rel="noopener">牛客网机器学习面试题目合集</a></li>
+<li><a href="https://zditect.com/main/pytorch/pytorch-prediction-and-linear-class.html" target="_blank" rel="noopener">Pytorch教程</a></li>
 </ul>
 <h2 id="别人的面经"><a href="#别人的面经" class="headerlink" title="别人的面经"></a>别人的面经</h2><ul>
 <li><a href="https://github.com/espectre/Algorithms_Engineer_Interview" target="_blank" rel="noopener">Algorithms_Engineer_Interview</a></li>
@@ -523,7 +537,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-16 21:31:42" itemprop="dateModified" datetime="2023-02-16T21:31:42+08:00">2023-02-16</time>
+                <time title="Modified: 2023-02-27 11:13:20" itemprop="dateModified" datetime="2023-02-27T11:13:20+08:00">2023-02-27</time>
               </span>
 
           
@@ -554,6 +568,15 @@
 <li>机器学习假设训练数据和测试数据满足相同的分布，BN就是在深度神经网络训练过程中使每一层神经网络的输入保持相同的分布。</li>
 <li>covariate shift：如果实例合集（x,y）中输入值x的分布老是变，不符合独立同分布的假设，模型很难稳定的学规律。</li>
 <li>BN通过规范化手段，将每层神经网络任意神经元的输入值的分布强行拉回到（0，1）正态分布，使得激活输入值落在非线性函数对输入比较敏感的区域，那么输入的小变化就会导致损失函数较大的变化，使得梯度变大，避免梯度消失的问题，加快收敛。（输入-&gt; 神经元 -&gt; BN -&gt; 激活函数）</li>
+</ul>
+<h3 id="损失、代价、目标函数的区别"><a href="#损失、代价、目标函数的区别" class="headerlink" title="损失、代价、目标函数的区别"></a>损失、代价、目标函数的区别</h3><ul>
+<li>损失函数：定义在一个样本上，算的是一个样本的误差</li>
+<li>代价函数：定义在整个训练集上，是所有样本的平均误差，也就是损失函数的平均</li>
+<li>目标函数：最终需要优化的函数，等于经验风险+结构风险（代价函数+正则化项）</li>
+</ul>
+<h3 id="梯度消失和梯度爆炸"><a href="#梯度消失和梯度爆炸" class="headerlink" title="梯度消失和梯度爆炸"></a>梯度消失和梯度爆炸</h3><ul>
+<li>产生梯度不稳定的根本原因：前面层上的梯度是来自后面层上梯度的乘积，当存在过多层时，就会存在梯度不稳定的场景，比如梯度消失和梯度爆炸。</li>
+<li>解决：选择合适的激活函数，使用batch normalization,梯度裁剪，参数初始化。</li>
 </ul>
 
       
@@ -663,7 +686,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-24 15:43:21" itemprop="dateModified" datetime="2023-02-24T15:43:21+08:00">2023-02-24</time>
+                <time title="Modified: 2023-02-26 19:49:10" itemprop="dateModified" datetime="2023-02-26T19:49:10+08:00">2023-02-26</time>
               </span>
 
           
@@ -684,7 +707,10 @@
 <li>写一版简历</li>
 </ul>
 <h3 id="Week-2-2-27-3-05"><a href="#Week-2-2-27-3-05" class="headerlink" title="Week 2 (2/27 ~ 3/05)"></a>Week 2 (2/27 ~ 3/05)</h3><ul>
-<li>论文基本思路</li>
+<li>拟定研究思路并跑通baseline</li>
+<li>算法刷到动规</li>
+<li>开始看深度学习和机器学习基础</li>
+<li>制作证件照，完善简历</li>
 </ul>
 
       
